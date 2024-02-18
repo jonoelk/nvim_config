@@ -1,17 +1,20 @@
 local opt = vim.opt
 
 -- [[ Context ]]
+opt.guicursor = ""
 opt.number = true
 opt.relativenumber = true
-opt.scrolloff = 4
+opt.scrolloff = 8
 opt.signcolumn = "number"
 opt.wrap = false
 opt.errorbells = false
+opt.updatetime = 50
+opt.colorcolumn = "80"
 
 -- [[ Backups ]]
 opt.swapfile = false
 opt.writebackup = false
-opt.undodir = "~/.config/nvim/undodir"
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 
 -- [[ Search ]]
@@ -26,7 +29,6 @@ opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.smartindent = true
-opt.smarttab = true
 opt.autoindent = true
 
 -- [[ Theme ]]

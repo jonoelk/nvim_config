@@ -9,7 +9,7 @@ opt.signcolumn = "number"
 opt.wrap = false
 opt.errorbells = false
 opt.updatetime = 50
-opt.colorcolumn = "80"
+-- opt.colorcolumn = "80"
 
 -- [[ Backups ]]
 opt.swapfile = false
@@ -33,4 +33,4 @@ opt.autoindent = true
 
 -- [[ Theme ]]
 opt.termguicolors = true
-vim.cmd.colorscheme('tokyonight')
+vim.cmd.colorscheme('rose-pine')

@@ -2,6 +2,8 @@ local lsp_zero = require("lsp-zero")
 
 local cmp = require("cmp")
 
+vim.keymap.set('v', '<leader>fb', vim.lsp.buf.format)
+
 
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings

@@ -24,7 +24,7 @@ opt.hlsearch = false
 opt.incsearch = true
 
 -- [[ Whitespace ]]
-opt.expandtab = true
+opt.expandtab = false
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
@@ -33,4 +33,4 @@ opt.autoindent = true
 
 -- [[ Theme ]]
 opt.termguicolors = true
-vim.cmd.colorscheme('rose-pine')
+vim.cmd.colorscheme('evergarden')

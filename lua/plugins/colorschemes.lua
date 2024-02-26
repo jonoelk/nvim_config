@@ -4,8 +4,7 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
-        lazy = false,
-        priority = 1000,
+        lazy = true,
         config = function()
             require("rose-pine").setup({
                 variant = "main",
@@ -28,11 +27,10 @@ return {
         end,
     },
 
-    -- Standard theme (blueish)
+    -- Blueish
     {
         "folke/tokyonight.nvim",
         lazy = true,
-        -- priority = 1000,
         opts = {
             style = "moon"
         },
@@ -44,7 +42,8 @@ return {
     -- Brown/warm (gruvy)
     {
         "crispybaccoon/evergarden",
-        lazy = true,
+        lazy = false,
+		priority = 1000,
         config = function()
             require 'evergarden'.setup {
                 transparent_background = false,

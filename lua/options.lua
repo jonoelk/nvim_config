@@ -24,12 +24,13 @@ opt.hlsearch = false
 opt.incsearch = true
 
 -- [[ Whitespace ]]
-opt.expandtab = false
+opt.expandtab = false -- viv repos
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.smartindent = true
 opt.autoindent = true
+opt.listchars = "tab:> ,trail:-,space:."
 
 -- [[ Theme ]]
 opt.termguicolors = true

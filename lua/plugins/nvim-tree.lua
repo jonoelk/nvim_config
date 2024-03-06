@@ -11,10 +11,13 @@ return {
 
         nvimtree.setup({
             actions = {
-                open_file = { quit_on_open = true, },
+                open_file = { quit_on_open = false, },
             },
             view = {
-                width = 40,
+                width = {
+                    min = 30,
+                    padding = 5,
+                },
                 relativenumber = true,
             },
             git = {
@@ -27,6 +30,6 @@ return {
             },
         })
 
-    	vim.keymap.set('n', '<leader>ee', api.tree.toggle)
+        vim.keymap.set('n', '<leader>ee', function() api.tree.toggle({ find_file = true }) end)
     end,
 }

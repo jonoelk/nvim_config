@@ -31,6 +31,7 @@ opt.softtabstop = 4
 opt.smartindent = true
 opt.autoindent = true
 opt.listchars = "tab:> ,trail:-,space:."
+opt.list = true
 
 -- [[ Theme ]]
 opt.termguicolors = true

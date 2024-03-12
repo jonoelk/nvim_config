@@ -24,7 +24,7 @@ opt.hlsearch = false
 opt.incsearch = true
 
 -- [[ Whitespace ]]
-opt.expandtab = false -- viv repos
+opt.expandtab = true -- viv repos
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
@@ -36,3 +36,19 @@ opt.list = true
 -- [[ Theme ]]
 opt.termguicolors = true
 vim.cmd.colorscheme('evergarden')
+
+vim.api.nvim_create_augroup('custom_indent', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+    group = 'custom_indent',
+    pattern = '*',
+    callback = function()
+        vim.opt.expandtab = true
+    end,
+})
+vim.api.nvim_create_autocmd('FileType', {
+    group = 'custom_indent',
+    pattern = 'cpp',
+    callback = function()
+        vim.opt.expandtab = false
+    end,
+})

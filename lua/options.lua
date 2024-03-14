@@ -52,3 +52,10 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.opt.expandtab = false
     end,
 })
+vim.api.nvim_create_autocmd('FileType', {
+    group = 'custom_indent',
+    pattern = 'proto',
+    callback = function()
+        vim.opt.expandtab = false
+    end,
+})

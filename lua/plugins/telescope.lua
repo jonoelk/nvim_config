@@ -4,13 +4,16 @@ return {
         "nvim-lua/plenary.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         "nvim-tree/nvim-web-devicons",
+        "princejoogie/dir-telescope.nvim",
     },
     config = function()
         local telescope = require("telescope")
         local builtin = require("telescope.builtin")
 
         telescope.load_extension("fzf")
+        telescope.load_extension("dir")
 
+        vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
         vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
         vim.keymap.set('n', '<leader>fs', builtin.live_grep, {})

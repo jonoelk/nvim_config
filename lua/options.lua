@@ -35,7 +35,7 @@ opt.list = true
 
 -- [[ Theme ]]
 opt.termguicolors = true
-vim.cmd.colorscheme('evergarden')
+vim.cmd.colorscheme('everforest')
 
 vim.api.nvim_create_augroup('custom_indent', { clear = true })
 vim.api.nvim_create_autocmd('FileType', {

@@ -3,6 +3,7 @@ local lsp_zero = require("lsp-zero")
 local cmp = require("cmp")
 
 vim.keymap.set('v', '<leader>fb', vim.lsp.buf.format)
+vim.keymap.set({'n','v'}, '<leader>ca', vim.lsp.buf.code_action)
 
 
 lsp_zero.on_attach(function(client, bufnr)

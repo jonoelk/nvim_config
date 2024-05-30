@@ -15,7 +15,8 @@ return {
 
         vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-        vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
+        vim.keymap.set('n', '<leader>fg', builtin.git_status, {})
+        vim.keymap.set('n', '<leader>fc', builtin.git_commits, {})
         -- vim.keymap.set('n', '<leader>fs', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fs', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", {})
         vim.keymap.set('n', '<leader>fw', builtin.grep_string, {})

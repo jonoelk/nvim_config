@@ -76,7 +76,32 @@ return {
                     primary = '#cc5500',
                 },
             }
-            vim.cmd([[colorscheme noirbuddy]])
+            vim.cmd.colorscheme(noirbuddy)
+            -- vim.cmd([[colorscheme noirbuddy]])
+        end,
+    },
+
+    -- lackluster - maybe better than above one
+    {
+        "slugbyte/lackluster.nvim",
+        lazy = true,
+        init = function()
+            vim.cmd.colorscheme("lackluster")
+        end,
+        config = function()
+            local lackluster = require("lackluster")
+            local color = lackluster.color
+            lackluster.setup({
+                tweek_syntax = {
+                    comment = color.gray5,
+                },
+                tweek_background = {
+                    normal = 'none',
+                    telescope = 'none',
+                    menu = color.gray3,
+                    popup = 'default',
+                },
+            })
         end,
     }
 }

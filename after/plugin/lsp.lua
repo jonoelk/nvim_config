@@ -22,11 +22,18 @@ require('mason-lspconfig').setup({
     },
 })
 
+lsp_zero.new_client({
+    name = 'clangd',
+    cmd = {'clangd', '--offset-encoding=utf-16'},
+    filetypes = {'c', 'cpp', 'cc', 'tpp'}
+})
+
 require('lspconfig').clangd.setup {
     cmd = {
         "clangd",
         "--offset-encoding=utf-16",
     },
+    filetypes = {"c", "cpp", "tpp", "cc"},
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =

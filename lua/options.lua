@@ -50,6 +50,7 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = 'cpp',
     callback = function()
         vim.opt.expandtab = false
+        vim.opt.cms = "// %s"
     end,
 })
 vim.api.nvim_create_autocmd('FileType', {

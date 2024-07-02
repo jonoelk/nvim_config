@@ -16,3 +16,5 @@ map("n", "N", "Nzzzv")
 map("x", "<leader>p", "\"_dP")
 
 map("n", "Q", "<nop>")
+
+map("n", "<leader>h", "<CMD>ClangdSwitchSourceHeader<CR>")

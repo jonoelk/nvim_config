@@ -14,6 +14,20 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     opts = {
-        arg = leet_arg
+        arg = leet_arg,
+        injector = {
+            ["cpp"] = {
+                before = { "#include <bits/stdc++.h>", "using namespace std;" },
+                after = "int main() {}",
+            },
+        },
+        theme = {
+            ["alt"] = {
+                bg = "#FFFFFF",
+            },
+            ["normal"] = {
+                fg = "#EA4AAA",
+            },
+        },
     },
 }

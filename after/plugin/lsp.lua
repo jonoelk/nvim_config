@@ -13,30 +13,27 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 require('mason').setup({})
-require('mason-lspconfig').setup({
-    ensure_installed = {
-        'clangd',
-    },
-    handlers = {
-        lsp_zero.default_setup,
-    },
+
+vim.lsp.config('*', {
+    root_markers = { '.git' },
 })
 
-lsp_zero.new_client({
-    name = 'clangd',
-    cmd = {'clangd', '--offset-encoding=utf-16'},
-    filetypes = {'c', 'cpp', 'cc', 'tpp'}
-})
-
-require('lspconfig').clangd.setup {
+vim.lsp.config.clangd = {
     cmd = {
         "clangd",
         "--offset-encoding=utf-16",
+        "--malloc-trim",
+        -- "--log=verbose",
+        "-j=3",
+        "--header-insertion=iwyu",
     },
     filetypes = {"c", "cpp", "tpp", "cc"},
+    root_markers = { '.clangd', 'compile_commands.json' },
 }
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] =
-    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = false
-    })
+vim.diagnostic.config({
+    underline = false,
+    virtual_text = true,
+})
+
+vim.lsp.enable({'clangd', 'gopls', 'pyright'})
